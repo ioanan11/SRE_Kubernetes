@@ -5,12 +5,14 @@ Kubernetes (also known as k8s or “kube”) is an open source container orchest
 
 For a comprehensive documentation, please visit the official kubernetes website: https://kubernetes.io/
 
+![alt text](https://github.com/ioanan11/SRE_Kubernetes/blob/main/Screenshot%202021-10-04%20143843.png)
+
 ## What are the benefits of Kubernetes?
 Kubernetes is the fastest growing project in the history of open Source software, after Linux.
 
-- open source
-- market leader
-- self-healing: Kubernetes's self-healing property ensures that the clusters always function at the optimal state
+- **open source**
+- **market leader**
+- **self-healing**: Kubernetes's self-healing property ensures that the clusters always function at the optimal state
 
 ## Kubernetes Architecture
 
@@ -18,15 +20,25 @@ Kubernetes is the fastest growing project in the history of open Source software
 
 ## Setting up Kubernetes 
 
+In Docker on your localhost, go to **Settings > Kubernetes > Enable Kubernetes > Apply and Restart**.
+
+![alt text]()
+
+The Kubernetes logo should be green and if you hover over it, it should say "Running". Also, to check if it was correctly installed, run `kubectl version`
+
 ## Commands
 
 Everything starts with `kubectl`
 
-![alt text]()
+![alt text](https://github.com/ioanan11/SRE_Kubernetes/blob/main/Screenshot%202021-10-04%20160700.png)
 
 `kubectl get service` - create a cluster (we can see the IP, port etc)
  
 # Deployment
+
+We will use 2 YAML files. One for deployment of the app and one to make it available.
+
+Additionally, we will use previous images which can be found on docker hub. It is very important that the images are available, otherwise we will get errors when deploying.
 
 ## nginx-deploy.yml
 
@@ -54,8 +66,9 @@ spec:
       spec:
             containers:
             - name: nginx
-              image: ioanan11/sre_cusomised_nginx:latest
+              image: ioanan11/sre_nginx_test:v1
               ports:
               - containerPort: 80
 ```
 
+Now run `kubectl create -f nginx-deploy.yml`
