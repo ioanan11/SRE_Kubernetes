@@ -1,0 +1,25 @@
+---
+
+# Select the type of API version and type of service/object
+apiVersion: v1
+kind: Service
+
+# Metadata for name
+metadata:
+  name: nginx-deployment
+  namespace: default
+
+# Specification to include ports
+spec:
+  ports:
+  - nodePort: 30442
+    port: 80
+    protocol: TCP
+    targetPort: 80
+
+# Let's define the selector and label to connect to nginx
+  selector:
+    app: nginx
+  
+  # Creating LoadBalancer type of deployment
+  type: LoadBalancer
