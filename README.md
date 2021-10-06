@@ -105,6 +105,8 @@ spec:
 
 # How to deploy nodejs with mongoDB
 
+![alt text](https://github.com/ioanan11/SRE_Kubernetes/blob/main/app%20and%20db%20arch.png)
+
 ## Step 1: nodejs
  
 ### node-deploy.yml
