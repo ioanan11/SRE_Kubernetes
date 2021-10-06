@@ -1,0 +1,15 @@
+# This creates an ASG for our node app
+
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: sparta-node-app-deploy
+  namespace: default
+spec:
+  maxReplicas: 9
+  minReplicas: 1
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: node
+  targetCPUUtilizationPercentage: 50
