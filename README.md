@@ -16,13 +16,13 @@ Kubernetes is the fastest growing project in the history of open Source software
 
 ## Kubernetes Architecture
 
-![alt text]()
+![alt text](https://github.com/ioanan11/SRE_Kubernetes/blob/main/Architecture.png)
 
 ## Setting up Kubernetes 
 
 In Docker on your localhost, go to **Settings > Kubernetes > Enable Kubernetes > Apply and Restart**.
 
-![alt text]()
+![alt text](https://github.com/ioanan11/SRE_Kubernetes/blob/main/Screenshot%202021-10-05%20095926.png)
 
 The Kubernetes logo should be green and if you hover over it, it should say "Running". Also, to check if it was correctly installed, run `kubectl version`
 
@@ -223,10 +223,10 @@ kubectl create -f node_svc.yml
 
 `localhost:3000/posts` page looks like this now:
 
-![alt text]()
+![alt text](https://github.com/ioanan11/SRE_Kubernetes/blob/main/posts.png)
 
 It needs to be seeded. The command for that is `kubectl exec pod_name env node seeds/seed.js`
 
 You can get the pod name using `kubectl get pods`. The page should look like this:
 
-![alt text]()
+![alt text](https://github.com/ioanan11/SRE_Kubernetes/blob/main/posts%20seeded.png)
